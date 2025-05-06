@@ -11,7 +11,6 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
-const PORT = 3000;
 
 app.use(express.static(__dirname)); // untuk akses file index.html dan logo
 
@@ -39,7 +38,7 @@ app.get('/export', async (req, res) => {
 
     // Kop surat
     worksheet.mergeCells('C1:F1');
-    worksheet.getCell('C1').value = 'PT. Rafid Teknologi Nusantara';
+    worksheet.getCell('C1').value = 'PT. Cihuy Teknologi Nusantara';
     worksheet.getCell('C1').font = { size: 14, bold: true };
     worksheet.getCell('C1').alignment = { horizontal: 'center' };
 
@@ -48,7 +47,7 @@ app.get('/export', async (req, res) => {
     worksheet.getCell('C2').alignment = { horizontal: 'center' };
 
     worksheet.mergeCells('C3:F3');
-    worksheet.getCell('C3').value = 'Telepon: (021) 12345678 | Email: info@rafidtech.co.id';
+    worksheet.getCell('C3').value = 'Telepon: (021) 12345678 | Email: info@Cihuytech.co.id';
     worksheet.getCell('C3').alignment = { horizontal: 'center' };
 
     // Garis pembatas
@@ -103,8 +102,4 @@ app.get('/export', async (req, res) => {
 
     await workbook.xlsx.write(res);
     res.end();
-});
-
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
 });
