@@ -1,3 +1,10 @@
+// npm i express exceljs
+// Fungsi Express di sini:
+// Membuat server HTTP kecil
+// Menangani route /export saat tombol ditekan
+// Menyusun Excel menggunakan exceljs
+// Mengirim file Excel sebagai download
+
 const express = require('express');
 const ExcelJS = require('exceljs');
 const path = require('path');
