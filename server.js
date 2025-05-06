@@ -11,6 +11,7 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
+const PORT = 3000;
 
 app.use(express.static(__dirname)); // untuk akses file index.html dan logo
 
@@ -102,4 +103,8 @@ app.get('/export', async (req, res) => {
 
     await workbook.xlsx.write(res);
     res.end();
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });
